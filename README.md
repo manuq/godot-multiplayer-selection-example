@@ -15,3 +15,7 @@ The example uses the high-level multiplayer in Godot based on ENet
 ## How to run the example
 Import the project into Godot. Then go to **Debug -> Run multiple instances** and
 select the amount of instances to run in parallel. Then run the project.
+
+![Screenshot of 3 instances running in parallel.](./docs/screenshot.png)
+
+
