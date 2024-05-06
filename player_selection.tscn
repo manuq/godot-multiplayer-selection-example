@@ -1,0 +1,157 @@
+[gd_scene load_steps=6 format=3 uid="uid://qiu3vk6vtkq0"]
+
+[ext_resource type="Script" path="res://player_selection.gd" id="1_wfhsi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64hnu"]
+bg_color = Color(0.314632, 0.167372, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3g3d"]
+bg_color = Color(0.426496, 0.234669, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emc5h"]
+bg_color = Color(0, 0.194301, 0.228447, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx8le"]
+bg_color = Color(4.9334e-07, 0.258184, 0.301079, 1)
+
+[node name="player selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wfhsi")
+
+[node name="TeamAP1Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 298.0
+offset_top = 290.0
+offset_right = 373.0
+offset_bottom = 373.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_k3g3d")
+text = "BOT"
+text_overrun_behavior = 4
+
+[node name="TeamBP1Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 401.0
+offset_top = 202.0
+offset_right = 476.0
+offset_bottom = 285.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cx8le")
+text = "BOT"
+text_overrun_behavior = 4
+
+[node name="TeamAP2Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 294.0
+offset_top = 116.0
+offset_right = 369.0
+offset_bottom = 199.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/focus = SubResource("StyleBoxFlat_k3g3d")
+text = "BOT"
+text_overrun_behavior = 4
+
+[node name="TeamBP2Button" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 193.0
+offset_top = 203.0
+offset_right = 268.0
+offset_bottom = 286.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cx8le")
+text = "BOT"
+text_overrun_behavior = 4
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.321
+anchor_bottom = 0.178
+offset_left = 50.0
+offset_top = 59.0
+offset_right = 31.56
+offset_bottom = 42.56
+bbcode_enabled = true
+text = "[center]Select your team mate and opponents[/center]"
+fit_content = true
+
+[node name="ClientLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.321
+anchor_bottom = 0.178
+offset_left = 400.0
+offset_top = 377.0
+offset_right = 381.56
+offset_bottom = 360.56
+bbcode_enabled = true
+text = "[center]Wait for the host to start the game.[/center]"
+fit_content = true
+
+[node name="ServerLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.321
+anchor_bottom = 0.178
+offset_left = 403.0
+offset_top = 320.0
+offset_right = 384.56
+offset_bottom = 303.56
+bbcode_enabled = true
+text = "[center]Wait for any players, then start the game.[/center]"
+fit_content = true
+
+[node name="StartButton" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 427.0
+offset_top = 374.0
+offset_right = 566.0
+offset_bottom = 464.0
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="StartButton"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+mouse_filter = 2
+bbcode_enabled = true
+text = "[center][wave]START[/wave][/center]"
+fit_content = true
+
+[connection signal="pressed" from="TeamAP1Button" to="." method="_on_team_ap_1_button_pressed"]
+[connection signal="pressed" from="TeamBP1Button" to="." method="_on_team_bp_1_button_pressed"]
+[connection signal="pressed" from="TeamAP2Button" to="." method="_on_team_ap_2_button_pressed"]
+[connection signal="pressed" from="TeamBP2Button" to="." method="_on_team_bp_2_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
