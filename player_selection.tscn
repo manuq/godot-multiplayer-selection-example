@@ -1,18 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://qiu3vk6vtkq0"]
+[gd_scene load_steps=4 format=3 uid="uid://qiu3vk6vtkq0"]
 
 [ext_resource type="Script" path="res://player_selection.gd" id="1_wfhsi"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64hnu"]
 bg_color = Color(0.314632, 0.167372, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k3g3d"]
-bg_color = Color(0.426496, 0.234669, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emc5h"]
 bg_color = Color(0, 0.194301, 0.228447, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cx8le"]
-bg_color = Color(4.9334e-07, 0.258184, 0.301079, 1)
 
 [node name="player selection" type="Control"]
 layout_mode = 3
@@ -31,10 +25,10 @@ offset_top = 290.0
 offset_right = 373.0
 offset_bottom = 373.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_64hnu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_k3g3d")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k3g3d")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_k3g3d")
-theme_override_styles/focus = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_64hnu")
 text = "BOT"
 text_overrun_behavior = 4
 
@@ -46,10 +40,10 @@ offset_top = 202.0
 offset_right = 476.0
 offset_bottom = 285.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_emc5h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cx8le")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cx8le")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_cx8le")
-theme_override_styles/focus = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/hover = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_emc5h")
 text = "BOT"
 text_overrun_behavior = 4
 
@@ -61,10 +55,10 @@ offset_top = 116.0
 offset_right = 369.0
 offset_bottom = 199.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_64hnu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_k3g3d")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k3g3d")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_k3g3d")
-theme_override_styles/focus = SubResource("StyleBoxFlat_k3g3d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_64hnu")
+theme_override_styles/focus = SubResource("StyleBoxFlat_64hnu")
 text = "BOT"
 text_overrun_behavior = 4
 
@@ -76,10 +70,10 @@ offset_top = 203.0
 offset_right = 268.0
 offset_bottom = 286.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_emc5h")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cx8le")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cx8le")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_cx8le")
-theme_override_styles/focus = SubResource("StyleBoxFlat_cx8le")
+theme_override_styles/hover = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_emc5h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_emc5h")
 text = "BOT"
 text_overrun_behavior = 4
 
@@ -128,6 +122,7 @@ fit_content = true
 [node name="StartButton" type="Button" parent="."]
 unique_name_in_owner = true
 visible = false
+layout_mode = 0
 offset_left = 427.0
 offset_top = 374.0
 offset_right = 566.0
@@ -150,8 +145,4 @@ bbcode_enabled = true
 text = "[center][wave]START[/wave][/center]"
 fit_content = true
 
-[connection signal="pressed" from="TeamAP1Button" to="." method="_on_team_ap_1_button_pressed"]
-[connection signal="pressed" from="TeamBP1Button" to="." method="_on_team_bp_1_button_pressed"]
-[connection signal="pressed" from="TeamAP2Button" to="." method="_on_team_ap_2_button_pressed"]
-[connection signal="pressed" from="TeamBP2Button" to="." method="_on_team_bp_2_button_pressed"]
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

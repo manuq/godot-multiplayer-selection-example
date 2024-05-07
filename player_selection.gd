@@ -33,22 +33,13 @@ func _update_players():
 func _ready():
 	_update_players()
 	Global.players_changed.connect(_update_players)
+	for player: Global.Players in _buttons_by_player.keys():
+		var button: Button = _buttons_by_player[player]
+		button.pressed.connect(_on_player_button_pressed.bind(player))
 
 
-func _on_team_ap_1_button_pressed():
-	Global.request_player_change.rpc_id(1, Global.Players.TeamAP1)
-
-
-func _on_team_bp_1_button_pressed():
-	Global.request_player_change.rpc_id(1, Global.Players.TeamBP1)
-
-
-func _on_team_ap_2_button_pressed():
-	Global.request_player_change.rpc_id(1, Global.Players.TeamAP2)
-
-
-func _on_team_bp_2_button_pressed():
-	Global.request_player_change.rpc_id(1, Global.Players.TeamBP2)
+func _on_player_button_pressed(player):
+	Global.request_player_change.rpc_id(1, player)
 
 
 func _on_start_button_pressed():
